@@ -1,0 +1,21 @@
+﻿<Window x:Class="PR._15._11._2.GroupInput"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PR._15._11._2"
+        mc:Ignorable="d"
+        Title="GroupInput" Height="150" Width="250">
+    <Viewbox>
+        <Grid Height="150" Width="250">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Label FontSize="16" Content="Введите название группы" HorizontalAlignment="Center" VerticalAlignment="Bottom"/>
+            <TextBox x:Name="TB_Result" Grid.Row="1" Margin="10,10,10,15"/>
+            <Button FontSize="16" Grid.Row="2" Content="Создать" x:Name="btn_CreateAndClose" Click="btn_CreateAndClose_Click" Margin="10,0,10,10"/>
+        </Grid>
+    </Viewbox>
+</Window>

@@ -1,0 +1,106 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PR._15._11._2"
+        xmlns:System="clr-namespace:System;assembly=mscorlib" x:Class="PR._15._11._2.MainWindow"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Viewbox>
+        <Grid Height="450" Width="800">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <StackPanel Orientation="Vertical">
+                <Label FontSize="16" Content="Выберите группу" HorizontalAlignment="Center" Margin="0,10,0,5"/>
+                <ComboBox FontSize="14" x:Name="CB_Group" Margin="0,0,10,0" SelectionChanged="CB_Group_SelectionChanged">
+                    <Button Content="+" MinWidth="390" x:Name="Btn_AddGroup" Click="Btn_AddGroup_Click"/>
+                </ComboBox>
+            </StackPanel>
+            <StackPanel Grid.Column="1" Orientation="Vertical">
+                <Label FontSize="16" Content="Список группы" HorizontalAlignment="Center" Margin="0,10,0,5"/>
+                <ListBox MinHeight="75" FontSize="14" x:Name="LB_Group" Margin="10,0,0,0" />
+            </StackPanel>
+
+            <DataGrid  FontSize="14" x:Name="DG_Group" Grid.ColumnSpan="5" Grid.Row="1" Margin="0,0,0,10"/>
+
+            <TabControl Grid.ColumnSpan="2" Grid.Row="2" Margin="0,10,0,0">
+                <TabItem Header="Удалить студента">
+                    <Grid Background="#FFE5E5E5">
+                        <Grid.RowDefinitions>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+                        <Label Content="Выберите строку в DataGrid Либо введите её номер" VerticalAlignment="Bottom"/>
+                        <TextBox x:Name="TB_RowDel" Grid.Row="1" Margin="0,0,5,30"/>
+                        <Button FontSize="20" x:Name="Btb_Del" Content="Удалить" Grid.Column="1" Grid.RowSpan="2" Margin="50,25,50,25" Click="Btb_Del_Click"/>
+                    </Grid>
+                </TabItem>
+                <TabItem Header="Изменить данные">
+                    <Grid Background="#FFE5E5E5">
+                        <Grid.RowDefinitions>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+                        <Label Content="Ведите фамилию"/>
+                        <Label Grid.Column="1" Content="Ведите Имя"/>
+                        <Label Grid.Row="2" Content="Ведите Возраст"/>
+                        <Label Grid.Row="2" Grid.Column="1" Content="Выберите Группу"/>
+                        <Label Grid.Row="0" Grid.Column="2" Grid.RowSpan="2" HorizontalAlignment="Center" VerticalAlignment="Bottom">
+                            <TextBlock><Run Text="Введите строку либо"/><LineBreak/><Run Text="выбирите в DataGrid"/></TextBlock>
+                        </Label>
+                        <TextBox x:Name="TB_FamilyEdit" Grid.Row="1" Grid.Column="0" Margin="5,0,5,5"/>
+                        <TextBox x:Name="TB_NameEdit" Grid.Row="1" Grid.Column="1" Margin="5,0,5,5"/>
+                        <TextBox x:Name="TB_AgeEdit" Grid.Row="3" Grid.Column="0" Margin="5,0,5,5"/>
+                        <ComboBox x:Name="CB_GroupEdit" Grid.Row="3" Grid.Column="1" Margin="5,0,5,5"/>
+                        <TextBox x:Name="TB_RowEdit" Grid.Row="2" Grid.Column="2" Margin="5,0,5,5" SelectionChanged="TB_RowEdit_SelectionChanged"/>
+                        <Button FontSize="20" x:Name="Btn_Edit" Content="Изменить" Grid.RowSpan="3" Grid.Row="1" Grid.Column="3" Margin="5,0,5,5" Click="Btn_Edit_Click" />
+                    </Grid>
+                </TabItem>
+                <TabItem Header="Добавить студента">
+                    <Grid Background="#FFE5E5E5">
+                        <Grid.RowDefinitions>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+                        <Label Content="Ведите фамилию"/>
+                        <Label Grid.Column="1" Content="Ведите Имя"/>
+                        <Label Grid.Row="2" Content="Ведите Возраст"/>
+                        <Label Grid.Row="2" Grid.Column="1" Content="Выберите группу"/>
+                        <TextBox x:Name="TB_FamilyAdd" Grid.Row="1" Grid.Column="0" Margin="5,0,5,5"/>
+                        <TextBox x:Name="TB_NameAdd" Grid.Row="1" Grid.Column="1" Margin="5,0,5,5"/>
+                        <TextBox x:Name="TB_AgeAdd" Grid.Row="3" Grid.Column="0" Margin="5,0,5,5"/>
+                        <ComboBox x:Name="CB_GroupAdd" Grid.Row="3" Grid.Column="1" Margin="5,0,5,5"/>
+                        <Button FontSize="20" x:Name="Btn_Add" Content="Добавить" Grid.RowSpan="3" Grid.Row="1" Grid.Column="2" Margin="5,0,5,5" Click="Btn_Add_Click"/>
+                    </Grid>
+                </TabItem>
+            </TabControl>
+        </Grid>
+    </Viewbox>
+</Window>
